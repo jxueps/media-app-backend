@@ -1,21 +1,23 @@
 # media-app-backend
 
 <h2>Topics covered</h2>
-- Annotations
-- Rest Controllers
-- Error handling
-- Dependency Management
-- Spring Data JPA
-- Entity lifecycle
-- JDBC
-- Spring security configuration
-- Authentication using JWT tokens
-- Testing
+<ul>
+  <li>Annotations</li>
+  <li>Rest Controllers</li>
+  <li>Error handling</li>
+  <li>Dependency Management</li>
+  <li>Spring Data JPA</li>
+  <li>Entity lifecycle</li>
+  <li>JDBC</li>
+  <li>Spring security configuration</li>
+  <li>Authentication using JWT tokens</li>
+  <li>Testing</li>
+</ul>
 
 
 <h2>API DOCUMENTATION</h2>
 <h3>Public API</h3>
-- POST /login
+<li>POST /login</li>
 <blockquote>
   Request:
   {
@@ -31,9 +33,9 @@
   }
 </blockquote>
 
-- POST /register
+<li>POST /register</li>
 
-- <blockquote>
+<blockquote>
   Request:
   {
     "email": "test@email.com",
@@ -52,8 +54,8 @@
 
 
 <h3>Secured API</h3>
-- GET /movies/searchByTitle/{string}
-    - Search for movies by given string
+<li>GET /movies/searchByTitle/{string}</li>
+Search for movies by given string
 <blockquote>
   Response:
   {
@@ -90,8 +92,8 @@
   }
 </blockquote>
 
-- GET /movies/searchById/{imdbId}
-    - Get specific movie data
+<li>GET /movies/searchById/{imdbId}</li>
+Get specific movie data
 <blockquote>
   Response:
   {
@@ -128,8 +130,8 @@
   }
 </blockquote>
 
-- GET /userMovie/{userMovieId}
-    - Get a specific user’s movie data
+<li>GET /userMovie/{userMovieId}</li>
+Get a specific user’s movie data
 <blockquote>
   Response:
   {
@@ -154,8 +156,8 @@
 }
 </blockquote>
 
-- POST /userMovie/addToWatch
-    - Add movie to watch list
+<li>POST /userMovie/addToWatch</li>
+Add movie to watch list
 <blockquote>
   Request:
   {
@@ -188,9 +190,9 @@
   }
 </blockquote>
 
-- POST /userMovie/addWatched
-    - Add movie to watched list
- <blockquote>
+<li>POST /userMovie/addWatched</li>
+Add movie to watched list
+<blockquote>
   Request:
   {
     "title": "Fal",
@@ -222,8 +224,8 @@
   }
 </blockquote>
 
-- GET /userMovie/getToWatch
-    - Get to watch movies
+<li>GET /userMovie/getToWatch</li>
+Get to watch movies
 <blockquote>
   Response:
   [
@@ -245,8 +247,8 @@
   ]
 </blockquote>
   
-- GET /userMovie/getWatched
-    - Get watched movies
+<li>GET /userMovie/getWatched</li>
+Get watched movies
 <blockquote>
   Response: 
   {
@@ -266,12 +268,11 @@
   }
 </blockquote>
 
-      
-- DELETE /userMovie/removeFromToWatch/{id}
-    - Delete a to watch movie
- 
-- GET review/get/{userMovieId}
-    - Get review from user’s movie
+<li>DELETE /userMovie/removeFromToWatch/{id}</li>
+Delete a to watch movie
+
+<li>GET review/get/{userMovieId}</li>
+Get review from user’s movie
 <blockquote>
   Response:
   {
@@ -301,8 +302,8 @@
   }
 </blockquote>
     
-- PUT review/update/{userMovieId}
-    - Update review
+<li>PUT review/update/{userMovieId}</li>
+Update review
 <blockquote>
   Request:
   {
@@ -320,6 +321,5 @@
   }
 </blockquote>
       
-- DELETE review/delete/{userMovieId}
-    - Delete review
-
+<li>DELETE review/delete/{userMovieId}</li>
+Delete review
