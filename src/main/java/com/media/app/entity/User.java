@@ -1,5 +1,6 @@
 package com.media.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -41,6 +42,7 @@ public class User implements UserDetails {
     @NotNull(message = "Password is required.")
     @Size(min = 6, message = "Password should be at least 6 characters.")
     @Column(name="password")
+    @JsonIgnore
     private String password;
 
     @NotNull(message = "First name is required.")
@@ -64,6 +66,7 @@ public class User implements UserDetails {
     Role role;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Token> tokens;
 
     @Override

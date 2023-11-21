@@ -41,7 +41,6 @@ public class UserMovie {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonIgnore
     private User user;
 
     @Column(name = "watched")

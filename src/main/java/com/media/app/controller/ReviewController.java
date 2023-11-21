@@ -1,10 +1,12 @@
 package com.media.app.controller;
 
+import com.media.app.dto.ErrorResponse;
 import com.media.app.dto.ReviewRequest;
 import com.media.app.entity.Review;
 import com.media.app.entity.User;
 import com.media.app.entity.UserMovie;
 import com.media.app.service.interfaces.ReviewService;
+import com.media.app.service.interfaces.UserMovieService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,30 +26,38 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/review")
 public class ReviewController {
     private final ReviewService reviewService;
+    private final UserMovieService userMovieService;
 
     @PreAuthorize("#user == authentication.principal")
-    @GetMapping("/get/{userMovieId}")
-    public ResponseEntity<Review> getReviewForMovieIdFromUser(@PathVariable Integer userMovieId, @AuthenticationPrincipal User user) {
-        Review review = reviewService.findReviewByUserMovieId(userMovieId).get();
-        return ResponseEntity.ok(review);
+    @GetMapping("/{userMovieId}")
+    public ResponseEntity<?> getReviewForMovieIdFromUser(@PathVariable Integer userMovieId, @AuthenticationPrincipal User user) {
+
+        UserMovie userMovie = userMovieService.findById(userMovieId).get();
+        if (userMovie.getUser().getId() != user.getId()) {
+            return ResponseEntity.badRequest().body(new ErrorResponse("Cannot access resource"));
+        }
+        if (userMovie.getReview() == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(userMovie.getReview());
     }
 
     @PreAuthorize("#user == authentication.principal")
-    @PostMapping("/add/{userMovieId}")
+    @PostMapping("/{userMovieId}")
     public ResponseEntity<Review> addReview(@Valid @RequestBody ReviewRequest reviewRequest, @PathVariable Integer userMovieId, @AuthenticationPrincipal User user) {
         Review review = reviewService.addReview(reviewRequest, userMovieId);
         return ResponseEntity.ok(review);
     }
 
     @PreAuthorize("#user == authentication.principal")
-    @PutMapping("/update/{userMovieId}")
+    @PutMapping("/{userMovieId}")
     public ResponseEntity<Review> updateReview(@Valid @RequestBody ReviewRequest reviewRequest, @PathVariable Integer userMovieId, @AuthenticationPrincipal User user) {
         Review review = reviewService.updateReview(reviewRequest, userMovieId);
         return ResponseEntity.ok(review);
     }
 
     @PreAuthorize("#user == authentication.principal")
-    @DeleteMapping("/delete/{userMovieId}")
+    @DeleteMapping("/{userMovieId}")
     public void deleteReview(@PathVariable Integer userMovieId, @AuthenticationPrincipal User user) {
         reviewService.deleteReviewById(userMovieId);
     }

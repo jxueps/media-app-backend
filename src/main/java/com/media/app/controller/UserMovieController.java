@@ -32,7 +32,7 @@ public class UserMovieController {
     public ResponseEntity<UserMovie> getUserMovie(@PathVariable Integer userMovieId, @AuthenticationPrincipal User user) {
         Optional<UserMovie> userMovieOptional = userMovieService.findById(userMovieId);
 
-        if (userMovieOptional.isPresent()) {
+        if (userMovieOptional.isPresent() && userMovieOptional.get().getUser().getId() == user.getId()) {
             return ResponseEntity.ok(userMovieOptional.get());
         } else {
             return ResponseEntity.notFound().build();
