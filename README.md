@@ -32,7 +32,7 @@
       "tokenType": "BEARER"
   }
 </blockquote>
-
+</br>
 <li>POST /register</li>
 <blockquote>
   Request:
@@ -50,8 +50,7 @@
       "tokenType": "BEARER"
   }
 </blockquote>
-
-
+</br>
 <h3>Secured API</h3>
 <li>GET /movies/searchByTitle/{string}</li>
 Search for movies by given string
@@ -90,7 +89,7 @@ Search for movies by given string
       "Response": "True"
   }
 </blockquote>
-
+</br>
 <li>GET /movies/searchById/{imdbId}</li>
 Get specific movie data
 <blockquote>
@@ -128,7 +127,7 @@ Get specific movie data
       "Response": "True"
   }
 </blockquote>
-
+</br>
 <li>GET /userMovie/{userMovieId}</li>
 Get a specific user’s movie data
 <blockquote>
@@ -154,7 +153,7 @@ Get a specific user’s movie data
     }
 }
 </blockquote>
-
+</br>
 <li>POST /userMovie/addToWatch</li>
 Add movie to watch list
 <blockquote>
@@ -188,7 +187,7 @@ Add movie to watch list
     "review": null
   }
 </blockquote>
-
+</br>
 <li>POST /userMovie/addWatched</li>
 Add movie to watched list
 <blockquote>
@@ -222,7 +221,7 @@ Add movie to watched list
     "review": null
   }
 </blockquote>
-
+</br>
 <li>GET /userMovie/getToWatch</li>
 Get to watch movies
 <blockquote>
@@ -245,7 +244,7 @@ Get to watch movies
     }
   ]
 </blockquote>
-  
+</br>
 <li>GET /userMovie/getWatched</li>
 Get watched movies
 <blockquote>
@@ -266,10 +265,10 @@ Get watched movies
     "review": null
   }
 </blockquote>
-
+</br>
 <li>DELETE /userMovie/removeFromToWatch/{id}</li>
 Delete a to watch movie
-
+</br>
 <li>GET review/get/{userMovieId}</li>
 Get review from user’s movie
 <blockquote>
@@ -281,9 +280,9 @@ Get review from user’s movie
     "timestamp": "2023-11-21T16:40:49"
   }
 </blockquote>
-      
-- POST Review/add/{userMovieId}
-    - Add review to user’s movie
+</br>
+<li>POST Review/add/{userMovieId}</li>
+Add review to user’s movie
 <blockquote>
   Request:
   {
@@ -300,7 +299,7 @@ Get review from user’s movie
     "timestamp": "2023-11-21T16:40:49"
   }
 </blockquote>
-    
+</br> 
 <li>PUT review/update/{userMovieId}</li>
 Update review
 <blockquote>
@@ -319,6 +318,6 @@ Update review
     "timestamp": "2023-11-21T16:40:49"
   }
 </blockquote>
-      
+</br>
 <li>DELETE review/delete/{userMovieId}</li>
 Delete review
