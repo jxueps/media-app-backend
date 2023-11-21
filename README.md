@@ -34,7 +34,6 @@
 </blockquote>
 
 <li>POST /register</li>
-
 <blockquote>
   Request:
   {
