@@ -1,6 +1,6 @@
 # media-app-backend
 
-<h2>Topics covered</h2>
+<h2>TOPICS COVERED</h2>
 <ul>
   <li>Annotations</li>
   <li>Rest Controllers</li>
@@ -9,11 +9,14 @@
   <li>Spring Data JPA</li>
   <li>Entity lifecycle</li>
   <li>JDBC</li>
+  <li>MySQL</li>
   <li>Spring security configuration</li>
   <li>Authentication using JWT tokens</li>
   <li>Testing</li>
 </ul>
 
+<h2>NOTES</h2>
+To start up the database, run the SQL script provided in /sql-scripts
 
 <h2>API DOCUMENTATION</h2>
 <h3>Public API</h3>
