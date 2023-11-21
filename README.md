@@ -269,7 +269,7 @@ Get watched movies
 <li>DELETE /userMovie/removeFromToWatch/{id}</li>
 Delete a to watch movie
 </br>
-<li>GET review/get/{userMovieId}</li>
+<li>GET review/{userMovieId}</li>
 Get review from user’s movie
 <blockquote>
   Response:
@@ -281,7 +281,7 @@ Get review from user’s movie
   }
 </blockquote>
 </br>
-<li>POST Review/add/{userMovieId}</li>
+<li>POST review/{userMovieId}</li>
 Add review to user’s movie
 <blockquote>
   Request:
@@ -300,7 +300,7 @@ Add review to user’s movie
   }
 </blockquote>
 </br> 
-<li>PUT review/update/{userMovieId}</li>
+<li>PUT review/{userMovieId}</li>
 Update review
 <blockquote>
   Request:
@@ -319,5 +319,5 @@ Update review
   }
 </blockquote>
 </br>
-<li>DELETE review/delete/{userMovieId}</li>
+<li>DELETE review/{userMovieId}</li>
 Delete review
